@@ -6,7 +6,7 @@
   "author": "Marcus Lyons",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --colors --progress",
+    "start": "node ./bin/www",
     "test": "jest"
   },
   "dependencies": {
