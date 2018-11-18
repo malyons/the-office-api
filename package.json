@@ -6,27 +6,31 @@
   "author": "Marcus Lyons",
   "license": "MIT",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "webpack --colors --progress",
     "test": "jest"
   },
   "dependencies": {
     "express": "^4.16.4",
     "express-pathfinder": "^1.1.0",
+    "lodash.merge": "^4.6.0",
     "morgan": "^1.9.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0",
     "raw-loader": "^0.5.1",
     "source-map-support": "^0.5.9",
     "start-server-webpack-plugin": "^2.2.5",
     "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
   }
 }

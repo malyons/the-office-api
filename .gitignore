@@ -198,3 +198,8 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/osx,node,code,jetbrains,dotsettings
+
+dist
+.webpack
+*.log
+*.error

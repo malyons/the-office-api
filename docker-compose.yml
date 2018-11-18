@@ -1,10 +1,26 @@
-version: '2.1'
+version: '3'
 
 services:
+  office-db:
+    container_name: office-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: "marcus"
+    volumes:
+      - "/usr/local/opt/postgress:/var/lib/postgres"
+    ports:
+      - 5432:5432
+
   office-api:
     image: office-api
     build: .
+    volumes:
+      - .:/usr/src/app:rw
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 3000:3000
+    depends_on:
+      - office-db
