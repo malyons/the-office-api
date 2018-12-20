@@ -1,0 +1,21 @@
+type Season {
+  id: ID! @unique
+  title: String!
+  year: Int!
+  summary: String!
+}
+
+type Location {
+  id: ID! @unique
+  name: String!
+  description: String!
+  season: [Season!]!
+}
+
+type Episode {
+  id: ID! @unique
+  title: String!
+  year: Int!
+  season: Season!
+  summary: String!
+}

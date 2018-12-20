@@ -1,17 +1,35 @@
 version: '3'
-
 services:
   office-db:
     container_name: office-db
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: "password"
-      POSTGRES_USER: "marcus"
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
     volumes:
       - "/usr/local/opt/postgress:/var/lib/postgres"
     ports:
       - 5432:5432
+
+  office-prisma:
+    image: prismagraphql/prisma:1.23
+    restart: always
+    ports:
+      - 4466:4466
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: office-db
+            port: 5432
+            user: prisma
+            password: prisma
+            migrations: true
+    depends_on:
+      - office-db
 
   office-api:
     image: office-api
@@ -23,4 +41,4 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - office-db
+      - office-prisma

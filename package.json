@@ -6,14 +6,17 @@
   "author": "Marcus Lyons",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --colors --progress",
+    "start": "webpack --colors --progress --mode development",
     "test": "jest"
   },
   "dependencies": {
     "express": "^4.16.4",
     "express-pathfinder": "^1.1.0",
     "lodash.merge": "^4.6.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "pg": "^7.6.1",
+    "pg-hstore": "^2.3.2",
+    "prisma-client-lib": "^1.23.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
